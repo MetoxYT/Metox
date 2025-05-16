@@ -9,6 +9,7 @@ href="Design_sans_titre-removebg-preview.png">
      
 <style>
 body {
+     
 
      ()
      
@@ -63,6 +64,15 @@ body {
        transform-origin: bottom left;
 }
 
+.box {
+         width: 200px;
+         height: 200px;
+         background-color: white;
+         border-radius: 10px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+         transition: box-shadow 0.1s ease;
+   }
+
      
 </style>
 <head>
@@ -72,10 +82,25 @@ body {
 <h2>coucou tout le  monde</h2>
 <p //créer un paragraphe </p>
 
+         <div class="box" id="dynamic-shadow"></div>
 
-<script>
-// permet de créer du code JavaScript ou phyton ( autre que HTML)
-</script>
+    <script>
+        const box = document.getElementById('dynamic-shadow');
+
+        document.addEventListener('mousemove', (e) => {
+            const rect = box.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const shadowX = (x - centerX) / 10;
+            const shadowY = (y - centerY) / 10;
+
+            box.style.boxShadow = `${shadowX}px ${shadowY}px 15px rgba(0, 0, 0, 0.3)`;
+        });
+    </script>
 </body>
 </head>
 </html>
