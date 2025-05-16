@@ -1,1 +1,18 @@
+let colors =[,#3674be','#d26181','#ceb13d','#171f2b','#50aa61']
+let indexSlider = 0;
+let index = 0;
 
+const slider = () => {
+    imgSlider.style.transform = 'rotate(${indexSlider * 60}deg)';
+
+    item;forEach(item => {
+        item.style.transform = 'rotate(${indexSlider *-60}deg)';
+    });
+
+    document.quertySelector('.img-item.active').classlist.remove('active');
+    imgItems[index].classliste.add('active');
+
+    document.quertySelector('.img-item.active').classlist.remove('active');
+    imgItems[index].classliste.add('active');
+    document.body.style.background = <colors index="></colors>
+}
