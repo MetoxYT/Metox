@@ -8,10 +8,10 @@ body {
 
      ()
      
-   h2 { 
+h2 { 
      font-family: Bold 700, sans-serif;
      margin: 180px;  // taille des marges}
-     color: #a3e4d7;
+     color: #00FF00;
    }
    h1 {
      font-family: Bold 700 ;
@@ -26,29 +26,48 @@ body {
    color: #2ecc71; 
    text-decoration: none; 
    font-weight: bold; 
-   transition: color 0.3s ease; 
+   display: inline-block; 
+   transition: transform 0.3s ease, color 0.3s ease; 
+   padding: 2px 0; 
+   position: relative;
   }
 
-      
-  a:hover {
-      color: #ff2300; 
-      text-decoration: underline; 
-  }
-
-
+ a:hover {
+      color: #0056b3; /* Couleur du texte du lien au survol */
+       transform: translateX(5px); /* Déplacement horizontal pour l'effet de balayage */
+      }
+     
  a:visited {
      color: #ffd500;
   }  
-
+     
+ a::after {
+     content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #007BFF;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+      }
+     
+ a:hover::after {
+       transform: scaleX(1);
+       transform-origin: bottom left;
+}
      
 </style>
 <head>
 <body>
 <h1>Metox</h1>
      <a href="https://youtu.be/vioDY9Qy9ho">nouvel video</a>
-<h2>coucou tout le  monde</h2>
+<h2>coucou tout le  monde</h2>// créer du texte en style de texte en h2 ( définit dans le CSS)
 <p //créer un paragraphe </p>
-</div>  // créer un bloc
+</div>
+// créer un bloc
 </div>
 <script>
 // permet de créer du code JavaScript ou phyton ( autre que HTML)
